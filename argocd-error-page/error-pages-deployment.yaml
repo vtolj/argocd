@@ -26,7 +26,7 @@ spec:
         imagePullPolicy: IfNotPresent
         env:
         - name: TEMPLATE_NAME
-          value: "noise"
+          value: "app-down"
         - name: SHOW_DETAILS
           value: "true"
         ports:
