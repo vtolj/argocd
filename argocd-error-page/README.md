@@ -1,0 +1,2 @@
+# argocd-play
+CD playground
