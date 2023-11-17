@@ -3,6 +3,7 @@ apiVersion: v1
 kind: services
 metadata:
   name: hemidall-info
+  namespace: hemidall-info
 spec:
   selector:
     app: hemidall-info
