@@ -1,27 +1,9 @@
 metadata:
   name: hemidall-info
-  namespace: hemidall-stackit
-spec:
-  selector:
-    app: hemidall-info
-  type: LoadBalancer
-  ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 8080
-  loadBalancerIP: 192.168.0.177
----
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: hemidall-stackit-sa
-  namespace: hemidall-stackit
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hemidall-info
-  namespace: hemidall-stackit
 spec:
   replicas: 1
   selector:
