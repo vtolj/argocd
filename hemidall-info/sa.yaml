@@ -2,4 +2,4 @@
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: hemidall-stackit-sa
+  name: hemidall-info

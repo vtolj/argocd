@@ -1,3 +1,4 @@
+---
 metadata:
   name: hemidall-info
 apiVersion: apps/v1
@@ -42,4 +43,4 @@ spec:
             valueFrom:
               fieldRef:
                 fieldPath: spec.serviceAccountName
-      serviceAccountName: hemidall-stackit-sa
+      serviceAccountName: hemidall-info
