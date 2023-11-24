@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: hemidall-info
-          image: inquisitor1337/hemidall-stackit1
+          image: inquisitor1337/hemidall-argocd-info
           ports:
             - containerPort: 8080
               name: http
