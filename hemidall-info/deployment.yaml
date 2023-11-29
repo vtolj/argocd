@@ -39,8 +39,3 @@ spec:
             valueFrom:
               fieldRef:
                 fieldPath: status.podIP
-          - name: POD_SERVICE_ACCOUNT
-            valueFrom:
-              fieldRef:
-                fieldPath: spec.serviceAccountName
-      serviceAccountName: hemidall-info
