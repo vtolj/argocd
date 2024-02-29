@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: docusaurus-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: docusaurus
+  template:
+    metadata:
+      labels:
+        app: docusaurus
+    spec:
+      containers:
+      - name: docusaurus
+        image: inquisitor1337/odj_docu:1
+        ports:
+        - containerPort: 8080
