@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: econ-worker-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: econ-worker
+  template:
+    metadata:
+      labels:
+        app: econ-worker
+    spec:
+      containers:
+      - name: econ-worker
+        image: inquisitor1337/econ-worker:1
+        ports:
+        - containerPort: 8080
+
