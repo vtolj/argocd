@@ -19,5 +19,5 @@ spec:
         - containerPort: 8080
       env: 
       - name: ECON_CHECK_URI
-        value: "https://www.google.com"
+        value: "http://www.google.com"
 
