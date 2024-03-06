@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: econ-worker
-        image: inquisitor1337/econ-worker:3
+        image: inquisitor1337/econ-worker:5
         ports:
         - containerPort: 8080
       env: 
