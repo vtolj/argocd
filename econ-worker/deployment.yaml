@@ -17,7 +17,7 @@ spec:
         image: inquisitor1337/econ-worker:5
         ports:
         - containerPort: 8080
-      env: 
-      - name: ECON_CHECK_URI
-        value: "http://www.google.com"
+        env: 
+        - name: ECON_CHECK_URI
+          value: "http://www.google.com"
 
