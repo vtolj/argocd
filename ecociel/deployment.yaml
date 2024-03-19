@@ -5,7 +5,7 @@ metadata:
   labels:
     app: ecociel
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: ecociel
@@ -17,6 +17,7 @@ spec:
       containers:
       - name: ecociel
         image: inquisitor1337/ecociel:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
 
