@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecociel-deployment
+  labels:
+    app: ecociel
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ecociel
+  template:
+    metadata:
+      labels:
+        app: ecociel
+    spec:
+      containers:
+      - name: ecociel
+        image: inquisitor1337/ecociel:latest
+        ports:
+        - containerPort: 80
+
