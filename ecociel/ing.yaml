@@ -15,7 +15,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: ecociel
+            name: ecociel-ingress
             port:
               number: 80
 
