@@ -11,7 +11,7 @@ spec:
   - host: "hemidall.dev" 
     http:
       paths:
-      - path: /ecociel
+      - path: /
         pathType: Prefix
         backend:
           service:
