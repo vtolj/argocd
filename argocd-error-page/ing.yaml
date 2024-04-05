@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: error-pages-ingress
+  namespace: error-pages
+  annotations:
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+    # Define custom error codes to be handled by the error-pages service
+    nginx.ingress.kubernetes.io/custom-http-errors: "400,401,403,404,500,501,502,503"
+    # Specify the service to handle the errors, matching the original Traefik configuration
+    nginx.ingress.kubernetes.io/default-backend: "error-pages"
+spec:
+  ingressClassName: nginx
+  rules:
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: error-pages
+                port:
+                  number: 8080
+
