@@ -8,14 +8,14 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: "hemidall.dev" # Change to your actual domain
+  - host: "hemidall.dev" 
     http:
       paths:
       - path: /ecociel
         pathType: Prefix
         backend:
           service:
-            name: ecociel-ingress
+            name: ecociel-service
             port:
               number: 80
 
