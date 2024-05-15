@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: docs
-        image: inquisitor1337/docs:2
+        image: inquisitor1337/docs:latest
         ports:
         - containerPort: 8080
