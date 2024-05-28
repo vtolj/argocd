@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-wasm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-wasm
+  template:
+    metadata:
+      labels:
+        app: hello-wasm
+    spec:
+      containers:
+      - name: hello-wasm
+        image: inquisitor1337/hello-wasm:latest
+        command: ["/usr/local/bin/wasmtime", "/hello.wasm"]
+
