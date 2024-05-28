@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: hello-wasm
-        image: inquisitor1337/hello-wasm:latest
-        command: ["/usr/local/bin/wasmtime", "/hello.wasm"]
+        image: inquisitor1337/hello-wasm:2
+        command: ["/usr/local/bin/wasmtime", "/app/hello.wasm"]
 
