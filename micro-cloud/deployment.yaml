@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: micro-cloud
+  labels:
+    app: micro-cloud
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: micro-cloud
+  template:
+    metadata:
+      labels:
+        app: micro-cloud
+    spec:
+      containers:
+        - name: micro-cloud
+          image: inquisitor1337/micro-cloud:latest
+          ports:
+            - containerPort: 3001
