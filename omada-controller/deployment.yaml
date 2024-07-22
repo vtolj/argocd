@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: omada-controller
+  namespace: omada
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: omada-controller
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: omada-controller
+    spec:
+      containers:
+      - image: omada-controller:5.13
+        name: omada-controller
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "500m"
+          limits:
+            memory: "2Gi"
+            cpu: "1"
+        ports:
+        - containerPort: 8088
+          protocol: TCP
+          name: http
+        - containerPort: 8043
+          protocol: TCP
+          name: https
+        - containerPort: 8843
+          protocol: TCP
+          name: portal
+        - containerPort: 27001
+          protocol: TCP
+          name: mongo1
+        - containerPort: 27002
+          protocol: TCP
+          name: mongo2
+        - containerPort: 27017
+          protocol: TCP
+          name: mongo3
+        volumeMounts:
+        - name: omada-data
+          mountPath: /opt/tplink/EAPController/data
+        - name: omada-logs
+          mountPath: /opt/tplink/EAPController/logs
+      volumes:
+      - name: omada-data
+        persistentVolumeClaim:
+          claimName: omada-data-pvc
+      - name: omada-logs
+        persistentVolumeClaim:
+          claimName: omada-logs-pvc
+
