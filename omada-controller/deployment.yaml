@@ -4,7 +4,7 @@ metadata:
   name: omada-controller
   namespace: omada
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: omada-controller
@@ -16,7 +16,7 @@ spec:
         app: omada-controller
     spec:
       containers:
-      - image: mbentley/omada-controller:5.13
+      - image: omada-controller:5.13
         name: omada-controller
         resources:
           requests:
