@@ -16,15 +16,47 @@ spec:
         app: omada-controller
     spec:
       containers:
-      - image: mbentley/omada-controller:5.13
-        name: omada-controller
-        resources:
-          requests:
-            memory: "512Mi"
-            cpu: "500m"
-          limits:
-            memory: "2Gi"
-            cpu: "1"
+      - name: omada-controller
+        image: mbentley/omada-controller:5.13
+        env:
+        - name: PUID
+          value: "508"
+        - name: PGID
+          value: "508"
+        - name: MANAGE_HTTP_PORT
+          value: "8088"
+        - name: MANAGE_HTTPS_PORT
+          value: "8043"
+        - name: PORTAL_HTTP_PORT
+          value: "8088"
+        - name: PORTAL_HTTPS_PORT
+          value: "8843"
+        - name: PORT_APP_DISCOVERY
+          value: "27001"
+        - name: PORT_ADOPT_V1
+          value: "29812"
+        - name: PORT_UPGRADE_V1
+          value: "29813"
+        - name: PORT_MANAGER_V1
+          value: "29811"
+        - name: PORT_MANAGER_V2
+          value: "29814"
+        - name: PORT_DISCOVERY
+          value: "29810"
+        - name: PORT_TRANSFER_V2
+          value: "29815"
+        - name: PORT_RTTY
+          value: "29816"
+        - name: SHOW_SERVER_LOGS
+          value: "true"
+        - name: SHOW_MONGODB_LOGS
+          value: "false"
+        - name: SSL_CERT_NAME
+          value: "tls.crt"
+        - name: SSL_KEY_NAME
+          value: "tls.key"
+        - name: TZ
+          value: "Etc/UTC"
         ports:
         - containerPort: 8088
           protocol: TCP
@@ -37,13 +69,28 @@ spec:
           name: portal
         - containerPort: 27001
           protocol: TCP
-          name: mongo1
-        - containerPort: 27002
+          name: app-discovery
+        - containerPort: 29812
           protocol: TCP
-          name: mongo2
-        - containerPort: 27017
+          name: adopt-v1
+        - containerPort: 29813
           protocol: TCP
-          name: mongo3
+          name: upgrade-v1
+        - containerPort: 29811
+          protocol: TCP
+          name: manager-v1
+        - containerPort: 29814
+          protocol: TCP
+          name: manager-v2
+        - containerPort: 29810
+          protocol: TCP
+          name: discovery
+        - containerPort: 29815
+          protocol: TCP
+          name: transfer-v2
+        - containerPort: 29816
+          protocol: TCP
+          name: rtty
         volumeMounts:
         - name: omada-data
           mountPath: /opt/tplink/EAPController/data

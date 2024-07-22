@@ -20,16 +20,36 @@ spec:
       protocol: TCP
       port: 8843
       targetPort: 8843
-    - name: mongo1
+    - name: app-discovery
       protocol: TCP
       port: 27001
       targetPort: 27001
-    - name: mongo2
+    - name: adopt-v1
       protocol: TCP
-      port: 27002
-      targetPort: 27002
-    - name: mongo3
+      port: 29812
+      targetPort: 29812
+    - name: upgrade-v1
       protocol: TCP
-      port: 27017
-      targetPort: 27017
+      port: 29813
+      targetPort: 29813
+    - name: manager-v1
+      protocol: TCP
+      port: 29811
+      targetPort: 29811
+    - name: manager-v2
+      protocol: TCP
+      port: 29814
+      targetPort: 29814
+    - name: discovery
+      protocol: TCP
+      port: 29810
+      targetPort: 29810
+    - name: transfer-v2
+      protocol: TCP
+      port: 29815
+      targetPort: 29815
+    - name: rtty
+      protocol: TCP
+      port: 29816
+      targetPort: 29816
 
