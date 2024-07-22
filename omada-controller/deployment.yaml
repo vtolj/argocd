@@ -16,7 +16,7 @@ spec:
         app: omada-controller
     spec:
       containers:
-      - image: omada-controller:5.13
+      - image: mbentley/omada-controller:5.13
         name: omada-controller
         resources:
           requests:
